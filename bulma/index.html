@@ -1,0 +1,38 @@
+<!-- https://handlebarsjs.com/guide/#what-is-handlebars -->
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dynamic module class example</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+
+    <script src="./js/handlebars.min-v4.7.6.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> -->
+
+    <script src="./js/shortLib.js"></script>
+
+    <style></style>
+    <!-- <script type="module" src="main.js"></script> -->
+  </head>
+
+  <body>
+    <section class="section">
+      <div class="container">
+        <div id="contents">AAA</div>
+      </div>
+    </section>
+
+    <script>
+      // execute the compiled template and print the output to the console
+      $$Id('contents').innerHTML = Handlebars.compile(
+        'Handlebars <b>{{doesWhat}}</b>'
+      )( {doesWhat: 'rocks!'} );
+    </script>
+  </body>
+</html>

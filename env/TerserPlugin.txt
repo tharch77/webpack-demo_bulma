@@ -1,0 +1,11 @@
+https://webpack.js.org/guides/build-performance/#avoid-production-specific-tooling
+
+
+Avoid Production Specific Tooling
+Certain utilities, plugins, and loaders only make sense when building for production. For example, it usually doesn't make sense to minify and mangle your code with the TerserPlugin while in development. These tools should typically be excluded in development:
+
+Minimal Entry Chunk
+webpack only emits updated chunks to the filesystem. For some configuration options, (HMR, [name]/[chunkhash] in output.chunkFilename, [hash]) the entry chunk is invalidated in addition to the changed chunks.
+
+Make sure the entry chunk is cheap to emit by keeping it small. 
+

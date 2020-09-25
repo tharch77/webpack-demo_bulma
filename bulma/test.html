@@ -1,0 +1,33 @@
+<!-- https://qiita.com/sassy_watson/items/f9947624876bf75a9eff -->
+
+
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script src="./js/shortLib.js"></script>
+
+    <script type="text/x-handlebars-template" id="template">
+      <h1>
+        {{name}}
+      </h1>
+      <div>
+        {{age}}
+      </div>
+    </script>
+
+    <script>
+      $$de( function () {
+        let tFn = Handlebars.compile($$Id('#template').innerHTML);
+        let values = {
+          name: 'Satoshi Watanabe',
+          age: 33,
+        };
+
+        $$Id('#contents').innerHTML = tFn(values);
+      });
+    </script>
+  </head>
+
+  <body id="contents"></body>
+</html>
